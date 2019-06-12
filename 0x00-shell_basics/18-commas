@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -mpa ; echo
+echo ; ls -mpav ; echo
