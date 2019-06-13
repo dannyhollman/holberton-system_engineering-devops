@@ -6,7 +6,7 @@ holberton [STUDENTNAME]
 .SH DESCRIPTION
 Holberton School is a project-based alternative to college for the next generation of software engineers.
 .SH OPTIONS
-holberton does not take any options. However, you can supply studentname.
+\fBholberton\fR does not take any options. However, you can supply studentname.
 .SH SEE ALSO
 .I peerlearning(2),.I  projectbased(2),.I fullstack(2),.I Betty(1)
 .SH BUGS
