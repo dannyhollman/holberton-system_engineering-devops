@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name '*.js' | grep -v exclude-dir
+find . -type f -name '*.js' -delete
