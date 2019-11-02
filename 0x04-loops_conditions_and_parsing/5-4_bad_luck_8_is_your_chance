@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#prints "Holberton School"
+#4th loop prints "bad luck"
+#8th loop prints "good luck"
 i=1
 while [ $i -lt 11 ]
 do
@@ -13,3 +16,4 @@ do
 	fi
 	((i++))
 done
+
