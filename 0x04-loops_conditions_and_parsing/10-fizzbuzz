@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#prints 1-100
+#multiples of 3 and 5 print "FizBuzz"
+#multiples of 3 print "Fizz"
+#multiples of 5 print "Buzz"
+i=1
+while [ $i -le 100 ]
+do
+	if [ $((i%3)) -eq 0 -a $((i%5)) -eq 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((i%3)) -eq 0 ]
+	then
+		echo "Fizz"
+	elif [ $((i%5)) -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo "$i"
+	fi
+	((i++))
+done
+
