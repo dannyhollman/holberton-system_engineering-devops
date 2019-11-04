@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# kills To infinity and beyond
+killall "4-to_infinity_and_beyond"
+
