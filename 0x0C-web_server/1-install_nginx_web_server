@@ -5,3 +5,4 @@ sudo apt-get -y install nginx
 sudo mkdir -p /var/www/html
 echo "Holberton School" > /var/www/html/index.html
 sudo systemctl reload nginx
+sudo systemctl restart nginx
