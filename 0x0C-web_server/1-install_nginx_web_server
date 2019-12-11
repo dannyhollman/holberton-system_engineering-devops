@@ -2,4 +2,5 @@
 # configures nginx to display string
 sudo apt-get update
 sudo apt-get -y install nginx
+sudo mkdir -p /var/www/html
 echo "Holberton School for the win!" > /var/www/html/index.html
