@@ -7,6 +7,6 @@ sudo apt-get update
 sudo apt-get -y install nginx
 sudo mkdir -p /var/www/html
 echo "Holberton School" > /var/www/html/index.html
-sed -i "19 i \\\tadd_header X-Served-By $server_name" /etc/nginx/sites-available/default
+sudo sed -i "19 i \\\tadd_header X-Served-By $server_name" /etc/nginx/sites-available/default
 sudo service nginx reload
 sudo service nginx restart
