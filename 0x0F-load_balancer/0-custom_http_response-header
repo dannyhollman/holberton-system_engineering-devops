@@ -5,6 +5,6 @@ server_name="$(uname -n)"
 
 sudo apt-get update
 sudo apt-get -y install nginx
-sed -i "19 i \tadd_header X-Served-By $server_name" /etc/nginx/sites-available/default
+sed -i "19 i \\\tadd_header X-Served-By $server_name" /etc/nginx/sites-available/default
 sudo nginx -s reload
 sudo nginx -s restart
