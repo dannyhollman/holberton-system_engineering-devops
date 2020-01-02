@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 # configures ubuntu with nginx and custom header
 
-server_name="$(uname -n)"
-
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo mkdir -p /var/www/html
+sudo service nginx start
 echo "Holberton School" > /var/www/html/index.html
-sudo sed -i "19 i \\\tadd_header X-Served-By $server_name" /etc/nginx/sites-available/default
+sudo sed -i "19 i \\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx reload
 sudo service nginx restart
