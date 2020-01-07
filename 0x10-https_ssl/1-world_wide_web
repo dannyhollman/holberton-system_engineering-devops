@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# displays information about subdomains
+
+if [ $# -eq 0 ]
+then
+	exit 1
+fi
+
+
+if [ $# -eq 2 ]
+then
+	IP="$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | rev | cut -f 1 | rev)"
+	printf "The subdomain %s is a A record and points to %s\n" "$2" "$IP"
+else
+	IP1="$(dig "www.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | rev | cut -f 1 | rev)"
+	IP2="$(dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | rev | cut -f 1 | rev)"
+	IP3="$(dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | rev | cut -f 1 | rev)"
+	IP4="$(dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | rev | cut -f 1 | rev)"
+	awk 'BEGIN { print "The subdomain www is a A record and points to '"$IP1"'"
+		     print "The subdomain lb-01 is a A record and points to '"$IP2"'"
+		     print "The subdomain web-01 is a A record and points to '"$IP3"'"
+	     	     print "The subdomain web-02 is a A record and points to '"$IP4"'"
+	}'
+fi
