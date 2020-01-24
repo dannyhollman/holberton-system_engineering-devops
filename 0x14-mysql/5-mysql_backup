@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# creates compressed backup of MySQL databases
+
+mysqldump -u root -p"$1" --databases tyrell_corp  > backup.sql
+date=$(date '+%d-%m-%Y')
+tar -cvzf "$date.tar.gz" backup.sql
