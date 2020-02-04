@@ -19,7 +19,7 @@ def main():
         for task in tasks:
             dic = dict(task)
             if dic['userId'] == user['id']:
-                dic['username'] = user['name']
+                dic['username'] = user['username']
                 dic['task'] = dic['title']
                 del dic['title']
                 del dic['id']
