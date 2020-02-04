@@ -17,7 +17,10 @@ def main():
 
     for task in tasks:
         task['username'] = user['username']
+        task['task'] = task['title']
+        del task['title']
         del task['id']
+        del task['userId']
 
     with open("{}.json".format(argv[1]), "w") as f:
         json.dump({argv[1]: tasks}, f)
