@@ -5,9 +5,10 @@ import requests
 
 def top_ten(subreddit):
     """ returns top 10 posts """
-    url = "http://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    url = "https://api.reddit.com/r/{}/hot".format(subreddit)
     headers = {'User-Agent': 'test'}
-    response = requests.get(url, headers=headers).json()
+    params = {'limit': 10}
+    response = requests.get(url, headers=headers, params=params).json()
     posts = response['data']['children']
     if len(posts) == 0:
         print('None')
