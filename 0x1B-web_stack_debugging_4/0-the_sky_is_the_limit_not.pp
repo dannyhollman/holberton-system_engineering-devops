@@ -1,3 +1,3 @@
 exec { 'removeLimit':
-  command => "/bin/sed -i 's/5/20000/g' /etc/default/nginx; sudo service nginx restart"
+  command => "/bin/sed -i 's/15/4096/g' /etc/default/nginx; sudo /usr/bin/service nginx restart"
 }
